@@ -1,0 +1,24 @@
+{
+  "name": "postgres-deploy-sandbox",
+  "version": "0.1.0",
+  "description": "Postgresql deployment automation - sandbox",
+  "scripts": {
+    "migrate:status": "node src/migrate status",
+    "migrate:initial": "node src/migrate initial",
+    "migrate:latest": "node src/migrate latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larsthorup/postgres-deploy-sandbox.git"
+  },
+  "author": "Lars Thorup <lars@zealake.com> (http://github.com/larsthorup)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larsthorup/node-deploy-sandbox/issues"
+  },
+  "homepage": "https://github.com/larsthorup/node-deploy-sandbox#readme",
+  "dependencies": {
+    "knex": "^0.10.0",
+    "pg": "^4.5.3"
+  }
+}

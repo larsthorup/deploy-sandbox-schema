@@ -9,7 +9,7 @@ function configuring () {
       client: 'pg',
       connection: postgresql_connection_string,
       migrations: {
-        directory: path.join(__dirname, './src/migrations')
+        directory: path.join(__dirname, './migrations')
       }
     });
   });

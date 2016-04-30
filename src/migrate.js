@@ -1,15 +1,22 @@
+var cryptex = require('cryptex');
 var Knex = require('knex');
+var knex;
 
-function run (command) {
-  return new Promise(function (resolve) {
-    console.log(command);
-    var knex = Knex({
+function configuring () {
+  return cryptex.getSecret('postgresql_connection_string').then(function (postgresql_connection_string) {
+    knex = Knex({
       client: 'pg',
-      connection: process.env.POSTGRESQL_CONNECTION_STRING || 'postgres://postgres:postgres@localhost:5432/lars',
+      connection: postgresql_connection_string,
       migrations: {
         directory: './src/migrations'
-      },
+      }
     });
+  });
+}
+
+function running (command) {
+  return new Promise(function (resolve) {
+    console.log(command);
     switch (command) {
       case 'status':
         knex.migrate.currentVersion().then(function (result) {
@@ -31,7 +38,9 @@ function run (command) {
   });
 }
 
-run(process.argv[2]).then(function () {
+configuring().then(function () {
+  return running(process.argv[2]);
+}).then(function () {
   process.exit(0);
 }).catch (function (err) {
   console.log('Error', err);

@@ -4,7 +4,11 @@ Postgresql deployment automation - sandbox
 Prerequisite
 ----
 
-* Environment variable POSTGRESQL_CONNECTION_STRING refers to a running Postgresql database
+* Ensure that you have a local PostgreSQL instance as specified in cryptex.json 
+
+
+    npm install
+
 
 Schema commands
 ----

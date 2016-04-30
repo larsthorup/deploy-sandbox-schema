@@ -1,3 +1,4 @@
+var path = require('path');
 var cryptex = require('cryptex');
 var Knex = require('knex');
 var knex;
@@ -8,7 +9,7 @@ function configuring () {
       client: 'pg',
       connection: postgresql_connection_string,
       migrations: {
-        directory: './src/migrations'
+        directory: path.join(__dirname, './src/migrations')
       }
     });
   });

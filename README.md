@@ -15,4 +15,6 @@ Schema commands
 
     npm run migrate:status
     npm run migrate:latest
-
+    npm run migrate:drop
+    npm run migrate:create
+    npm run migrate:recreate

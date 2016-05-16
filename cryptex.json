@@ -4,7 +4,7 @@
     "algorithm": "plaintext",
     "secretEncoding": "utf8",
     "secrets": {
-      "postgresql_connection_string": "postgres://postgres:postgres@localhost:5432/lars"
+      "postgresql_connection_string": "postgres://postgres:postgres@localhost:5432"
     }
   }
 }

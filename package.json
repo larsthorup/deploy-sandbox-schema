@@ -4,8 +4,10 @@
   "description": "Postgresql deployment automation - sandbox",
   "scripts": {
     "migrate:status": "node src/migrate status",
-    "migrate:initial": "node src/migrate initial",
-    "migrate:latest": "node src/migrate latest"
+    "migrate:latest": "node src/migrate latest",
+    "migrate:create": "node src/migrate create",
+    "migrate:drop": "node src/migrate drop",
+    "migrate:recreate": "npm run migrate:drop && npm run migrate:create && npm run migrate:latest"
   },
   "repository": {
     "type": "git",
